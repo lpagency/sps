@@ -1,0 +1,34 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    &__item {
+        color: $color-text-light;
+        font-family: $font-main;
+        font-weight: 200;
+        & + & {
+            &:before {
+                content: "/";
+                margin: 0 0.25rem;
+                font-size: 1rem;
+                @include atSmall {
+                    font-size: 0.75rem;
+                }
+            }
+        }
+    }
+    &__link {
+        &:hover {
+            color: $color-text-dark;
+            &:before {
+                color: $color-text-light;
+            }
+        }
+        & + & {
+            &:before {
+                content: ">";
+                margin: 0 0.25rem;
+            }
+        }
+    }
+}

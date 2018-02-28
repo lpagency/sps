@@ -1,0 +1,76 @@
+.product-box {
+    padding: 1.667rem 0.8333rem;
+    overflow: hidden;
+    @include atSmall {
+        padding: 1.25rem 0.625rem;
+    }
+    &__content {
+        display: block;
+        position: relative;
+        border: 1px solid $color-white;
+        @include linkStates(inherit, none);
+        &:hover {
+            border-color: $color-border;
+            .product-box__btn {
+                opacity: 1;
+            }
+        }
+    }
+    &__tag {
+        background-color: $color-primary-light;
+        width: 52%;
+        text-align: right;
+        padding: 0 8px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    &__img {
+        width: 90%;
+        height: auto;
+        display: block;
+        margin: -0.667rem auto;
+        position: relative;
+        z-index: -1;
+        @include atSmall {
+            margin: -0.5rem auto;
+        }
+    }
+    &__copy {
+        padding: 0.5rem;
+        padding-top: 0;
+    }
+    &__prices {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.333rem;
+        @include atSmall {
+            margin-top: 1rem;
+        }
+        &--alignstart {
+            justify-content: flex-start;
+            margin-top: 0;
+            & > * {
+                & + * {
+                    margin-left: 1rem;
+                    @include atSmall {
+                        margin-left: 0.75rem;
+                    }
+                }
+            }
+        }
+    }
+    &__btn {
+        text-align: center;
+        padding: 2px;
+        border-top: 1px solid $color-border;
+        opacity: 0;
+        transition: all .25s;
+    }
+    &--small {
+        @include atSmall {
+            width: 16.667% !important;
+        }
+    }
+}

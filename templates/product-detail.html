@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container">
+    <ul class="u-padding-top-smaller u-hidden-xs-flex breadcrumbs">
+        <li class="breadcrumbs__item">
+            <a href="#" class="text text--color-light text--extralight text--smaller breadcrumbs__link">Inicio</a>
+        </li>
+        <li class="breadcrumbs__item">
+            <a href="#" class="text text--color-light text--extralight text--smaller breadcrumbs__link">Mujeres</a>
+        </li>
+        <li class="breadcrumbs__item">
+            <a href="#" class="text text--color-light text--extralight text--smaller breadcrumbs__link">Sandalias Mujer</a>
+            <a href="#" class="text text--color-light text--extralight text--smaller breadcrumbs__link">Ver Más Sandalias Mujer</a>
+        </li>
+    </ul>
+    <div class="section-product">
+        <!-- product detail goes here -->
+        {% include 'components/product-detail-loader.html' %}
+    </div>
+    <div class="section-suggested">
+        <div class="section-products__content-row">
+            <!-- product related -->
+        </div>
+        <div class="section-products__content-row">
+            <!-- product related -->
+        </div>
+    </div>
+</div>
+
+{% end %}
+
+{% block head %}
+<style media="screen">{% include '../static/css/compiled/product_preload.min.css' %}</style>
+{% end %}
+
+<!-- ALWAYS PUT JS INSIDE THIS BLOCK AND MAKE THEM ASYNCH -->
+{% block javascript %}
+
+{% include 'components/product-list-item-small.html' %}
+{% include 'components/product-detail.html' %}
+
+<!--  javascript includes for shopping cart -->
+<!-- <script defer="defer" type="text/javascript" src="http://localhost:9000/dist/bodegas.client.js"></script> -->
+<script defer="defer" type="text/javascript" src="{{ site_base }}/common/js/bower/bodegas.client/dist/bodegas.client.min.js"></script>
+<script type="text/javascript" defer="defer">
+    // Shopping cart
+    // =============
+    window.addEventListener('DOMContentLoaded', function() {
+        $(".section-product").ecommerce(
+            'product_detail',
+            {
+                product_id: {{ product_id }},
+                app_public: 84,
+                site_name: 'placare',
+                base_url: 'https://apibodegas.loadingplay.com/',
+                products_per_page : 9,
+                maxProducts: 6,
+                tag: '',
+                ignore_stock: true,
+                infinite_scroll: true,
+                checkout_url: 'https://checkout.loadingplay.com',
+                operator :'or',
+                templateOrigin: '#product_template',
+                variants: {
+                    product_sku: '',
+                    container: '.ecommerce-sizes',
+                    active_class: 'product__size-list__item--active',
+                    variant_template: '<div class="u-padding-vertical-small product__size-list">{{! values }}</div>',
+                    value_template: '<li class="product__size-list__item variant-value" variant="{{! variant_name }}" value="{{! value }}" in_stock="{{! in_stock }}" >{{! value }}</li>'
+                },
+                onLoad: function(product)
+                {
+                    $('.product-loader').remove();
+
+                    // create a new opts for other plugins
+                    var opts = $.extend(
+                        true, {}, $(this).data('ecommerce').options,
+                        {
+                            variants: {
+                                product_sku: product.sku
+                            },
+                            onLoad: $.noop
+                        });
+
+                    // load variants
+                    $('.section-product').ecommerce('load_variants', opts);
+                    $('.ecommerce-sizes').on(
+                        'combination:selected', function(e, d, in_stock)
+                        {
+                            if (in_stock)
+                            {
+                                $('[lp-cart-add]').attr('product-combination', d);
+                                $('[lp-cart-add]').removeAttr('disabled');
+                            }
+                            else
+                            {
+                                $('[lp-cart-add]').removeAttr('product-combination');
+                                $('[lp-cart-add]').attr('disabled', true);
+                            }
+                        });
+
+
+                    // load products
+                    $('.section-products__content-row').ecommerce('product_box', opts);
+                }
+            });
+    });
+</script>
+<!-- /javascript includes for shopping-cart -->
+{% end %}

@@ -1,0 +1,16 @@
+.container {
+    width: 100%;
+    padding: 0 15px;
+    @include atSmall {
+        width: 750px;
+        margin: 0 auto;
+    }
+    @include atMedium {
+        width: 980px;
+    }
+    &--big {
+        @include atLarge {
+            width: 1170px;
+        }
+    }
+}

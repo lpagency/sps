@@ -1,0 +1,18 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    &__cell {
+        padding: 8px;
+        text-align: left;
+        &--center {
+            text-align: center;
+        }
+    }
+    &__row {
+        & + & {
+            .table__cell {
+                border-top: 1px solid $color-border;
+            }
+        }
+    }
+}

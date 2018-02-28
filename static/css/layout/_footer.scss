@@ -1,0 +1,162 @@
+.footer {
+    background-color: $color-bg-footer;
+    &__nav {
+        padding: 10px 0 9.167rem 0;
+        @include atSmall {
+            padding: 10px 0 6.875rem 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+    &__column {
+        @include atSmall {
+            width: 20%;
+        }
+        & + & {
+            margin-top: 2.5rem;
+            @include atSmall {
+                margin-top: 0;
+                margin-left: 1.875rem;
+            }
+        }
+        &:nth-last-child(2) {
+            @include atSmall {
+                width: 17%;
+            }
+        }
+        &:last-child {
+            @include atSmall {
+                width: 35%;
+            }
+        }
+        &-title {
+            margin-bottom: 10px;
+        }
+    }
+    &__menu {
+        &-item {
+            & + & {
+                margin-top: 10px;
+            }
+        }
+        &-link {
+            display: block;
+            width: 100%;
+            height: auto;
+            &:hover {
+                color: $color-text-dark;
+            }
+        }
+        &--inline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            .footer__menu-item {
+                flex-grow: 1;
+                flex-basis: 0;
+                & + .footer__menu-item {
+                    margin-top: 0;
+                    margin-left: 3px;
+                }
+            }
+        }
+    }
+    &__img {
+        display: block;
+    }
+    &__subscribe {
+        border-top: 1px solid $color-border;
+        @include atSmall {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        &-copy,
+        &-form {
+            @include atSmall {
+                width: 50%;
+            }
+        }
+        &-form {
+            margin-top: 1.333rem;
+            @include atSmall {
+                margin-top: 0;
+                margin-left: 1.875rem;
+            }
+        }
+    }
+    &__searches {
+        &-header {
+            &__text-wrapper {
+                position: relative;
+            }
+            &__text {
+                background-color: $color-bg-footer-full;
+                @include atSmall {
+                    width: 25%;
+                }
+                @include atLarge {
+                    width: 22%;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    z-index: 1;
+                    top: 0.5rem;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: $color-border;
+                }
+                span {
+                    display: inline-block;
+                    position: relative;
+                    z-index: 2;
+                    background-color: $color-bg-footer-full;
+                    padding-right: 1rem;
+                }
+            }
+        }
+        &-item {
+            &:hover {
+                color: $color-text-dark;
+            }
+            & + & {
+                &:before {
+                    content: "|";
+                    margin: 0 5px 0 2px;
+                    color: $color-text-dark;
+                }
+            }
+        }
+    }
+    &__copyright {
+        @include atSmall {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        & > * {
+            @include atSmall {
+                width: 33.33%;
+            }
+            & + * {
+                margin-top: 2.5rem;
+                @include atSmall {
+                    margin-top: 0;
+                }
+            }
+            &:last-child {
+                @include atSmall {
+                    text-align: right;
+                }
+            }
+            &:nth-child(2) {
+                @include atSmall {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

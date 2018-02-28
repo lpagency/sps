@@ -1,0 +1,59 @@
+.header {
+    box-shadow: 0 1px 4px 0 #ebedef;
+    border-bottom: 1px solid #ebedef;
+    position: fixed;
+    z-index: 4;
+    background-color: $color-white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include atSmall {
+        box-shadow: none;
+        border-bottom: 0;
+        position: static;
+        width: auto;
+    }
+    &__sub {
+        border-bottom: 1px solid $color-border;
+        display: none;
+        @include atSmall {
+            display: block;
+        }
+        &-content {
+            @include atSmall {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        &-actions {
+            @include atSmall {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin-right: -1rem;
+            }
+            &-item {
+                @include atSmall {
+                    padding: 0 1rem;
+                }
+                & + & {
+                    @include atSmall {
+                        position: relative;
+                        &:before {
+                            content: "|";
+                            color: $color-border;
+                            position: absolute;
+                            top: 50%;
+                            left: -1px;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__main {
+        border-bottom: 1px solid $color-border;
+    }
+}

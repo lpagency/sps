@@ -1,0 +1,35 @@
+<script type="x-template" id="shopping-cart-product">
+    <tr class="table__row">
+        <th class="text text--color-dark table__cell">{{! name }}</th>
+        <th class="text text--color-dark table__cell">{{! combination }}</th>
+        <th class="text text--color-dark table__cell table__cell--center">
+            <span class="remove-one" lp-cart-remove-one="{{! id }}" >-</span>{{! quantity }}
+            <span class="add-one" lp-cart-add-one="{{! id }}">+</span>
+        </th>
+        <th class="text text--color-dark table__cell table__cell--center">{{! price|money }}</th>
+        <th class="text text--color-dark table__cell table__cell--center remove-item" lp-cart-remove="{{! id }}" >X</th>
+    </tr>
+</script>
+
+<script type="text/x-template" id="shopping-cart-units-total" >
+    <span>{{! units_total }}</span>
+</script>
+
+
+<script type="text/x-template" id="shopping-cart-total" >
+    <tr class="table__row">
+        <td class="text text--color-dark text--bold table__cell">Total:</td>
+        <td class="table__cell"></td>
+        <td class="table__cell"></td>
+        <td class="text text--color-dark text--bold table__cell table__cell--center">{{! total|money }}</td>
+        <td class="table__cell"></td>
+    </tr>
+</script>
+
+
+<script type="text/x-template" id="shopping-cart-checkout-form" >
+    <div class="popup__btns">
+        <a href="#" class="close-popup btn">VOLVER</a>
+        <a href="{{! checkout_url}}?site_id=53&cart_id={{! cart_id }}&origin=placare" class="btn" data-popup="shopping-bag">PAGAR</a>
+    </div>
+</script>

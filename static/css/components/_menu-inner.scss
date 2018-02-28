@@ -1,0 +1,43 @@
+.menu-inner {
+    display: none;
+    margin-left: -1.667rem;
+    margin-right: -1.667rem;
+    margin-top: 1rem;
+    @include atSmall {
+        margin: 0;
+        padding: 3px 0;
+        border: 1px solid $color-border;
+        position: absolute;
+        width: 350%;
+        z-index: 6;
+        background-color: $color-white;
+        bottom: 0;
+        left: 0;
+        transform: translateY(100%);
+    }
+    &__item {
+        border-top: 1px solid $color-border;
+        padding: 1rem 1.667rem;
+        @include atSmall {
+            margin-top: 0;
+            padding: 0;
+            border-top: 0;
+        }
+    }
+    &__link {
+        display: block;
+        width: 100%;
+        transition: all .25s;
+        @include linkStates($color-text-dark, none);
+        @include atSmall {
+            padding: 3px 20px;
+            color: $color-text-light !important;
+        }
+        &:hover {
+            color: $color-text-light;
+            @include atSmall {
+                background-color: $color-border;
+            }
+        }
+    }
+}

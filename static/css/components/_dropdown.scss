@@ -1,0 +1,62 @@
+.dropdown {
+    position: relative;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
+    cursor: pointer;
+    &__label {
+        font-family: $font-main;
+        color: rgba(128, 128, 128, 0.65);
+        &:hover {
+            color: rgba(128, 128, 128, 0.65);
+        }
+    }
+    &__arrow {
+        font-size: 1rem;
+        color: rgba(128, 128, 128, 0.65);
+        @include atSmall {
+            font-size: 0.75rem;
+        }
+    }
+    &__list {
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
+        width: 100%;
+        transform: translateY(100%);
+        border: 1px solid $color-border;
+        padding: 6px 0;
+        display: none;
+        background-color: $color-white;
+        &-item {
+            cursor: pointer;
+            padding: 3px 20px;
+            font-family: $font-main;
+            font-weight: 200;
+            font-size: 1.167rem;
+            color: $color-text-light;
+            @include atSmall {
+                font-size: 0.875rem;
+            }
+            &:hover {
+                background-color: $color-border;
+            }
+        }
+        &--visible {
+            display: block;
+            position: static;
+            transform: none;
+            border: 0;
+            text-align: center;
+            .dropdown__list-item {
+                &:hover {
+                    color: $color-text-dark;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

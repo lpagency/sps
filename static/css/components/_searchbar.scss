@@ -1,0 +1,66 @@
+.searchbar {
+    position: relative;
+    &__input {
+        background-color: $color-white;
+        padding: 8px 3rem 10px 10px;
+        color: $color-text-light;
+        font-family: $font-main;
+        font-size: 1.167rem;
+        font-weight: 300;
+        border-radius: 4px;
+        border: 1px solid $color-border-alt;
+        width: 100%;
+        @include atSmall {
+            font-size: 0.875rem;
+            padding-right: 2rem;
+            background-color: $color-bg-search;
+        }
+        &::placeholder {
+            color: $color-text-light;
+        }
+    }
+    &__btn {
+        appearance: none;
+        border: 0;
+        background-color: transparent;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        padding: 0 1rem;
+        cursor: pointer;
+        @include atSmall {
+            padding: 0 7px;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: 0;
+            height: 37px;
+            width: 1px;
+            background-color: $color-border;
+            @include atSmall {
+                display: none;
+            }
+        }
+        &-label {
+            @include atSmall {
+                display: none;
+            }
+        }
+        &-icon {
+            color: $color-text-light;
+            cursor: pointer;
+            font-size: 1.777rem;
+            display: none;
+            @include atSmall {
+                display: block;
+                font-size: 1.333rem;
+            }
+            &:hover {
+                color: $color-text;
+            }
+        }
+    }
+}

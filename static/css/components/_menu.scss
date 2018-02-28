@@ -1,0 +1,222 @@
+.menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.667rem 0;
+    @include atSmall {
+        padding: 0;
+        align-items: stretch;
+    }
+    &__main,
+    &__actions {
+        @include atSmall {
+            width: 50%;
+        }
+    }
+    &__main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-grow: 1;
+        @include atSmall {
+            justify-content: flex-start;
+            flex-grow: 0;
+        }
+    }
+    &__nav {
+        position: fixed;
+        z-index: 3;
+        bottom: 0;
+        left: 0;
+        height: calc(100vh - 56px);
+        width: 60vw;
+        pointer-events: none;
+        @include atSmall {
+            position: static;
+            transform: none;
+            height: auto;
+            width: auto;
+            pointer-events: all;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba($color-black, .75);
+            opacity: 0;
+            transition: all .25s;
+            @include atSmall {
+                display: none;
+            }
+        }
+        &-content {
+            position: relative;
+            z-index: 2;
+            background-color: $color-white;
+            height: 100%;
+            width: 100%;
+            padding: 1rem 0;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: all .25s;
+            @include atSmall {
+                padding: 0;
+                transform: none;
+                overflow: visible;
+            }
+            & > *:not(.menu__list) {
+                padding-left: 1.667rem;
+                padding-right: 1.667rem;
+            }
+        }
+        &--active {
+            pointer-events: all;
+            &:before {
+                opacity: 1;
+            }
+            .menu__nav-content {
+                transform: none;
+            }
+        }
+    }
+    &__btn {
+        cursor: pointer;
+        font-size: 1.75rem;
+        color: $color-text;
+        @include atSmall {
+            display: none;
+        }
+        &:hover {
+            color: $color-text-dark;
+        }
+    }
+    &__logo {
+        display: block;
+        max-width: 154px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include atSmall {
+            position: static;
+            transform: none;
+            margin-right: 1.875rem;
+        }
+        &-img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__list {
+        @include atSmall {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        &-item {
+            cursor: pointer;
+            position: relative;
+            padding: 1rem 1.667rem;
+            border-bottom: 1px solid $color-border;
+            border-top: 1px solid $color-border;
+            @include atSmall {
+                cursor: initial;
+                padding: 0;
+                border: 0;
+            }
+            & + & {
+                border-top: 0;
+                @include atSmall {
+                    border-top: 0;
+                    margin-left: 1.875rem;
+                }
+            }
+        }
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            pointer-events: none;
+            transition: all .25s;
+            @include linkStates($color-text-dark, none);
+            @include atSmall {
+                display: inline-block;
+                pointer-events: all;
+                padding: 1.25rem 0;
+                @include linkStates($color-text-light, none);
+            }
+            &:hover {
+                color: $color-text-light;
+                @include atSmall {
+                    color: $color-primary;
+                    text-decoration: underline;
+                }
+            }
+            & + & {
+                margin-top: 1.333rem;
+                @include atSmall {
+                    margin-top: 0;
+                }
+            }
+            &__icon {
+                color: $color-text-light;
+                font-size: inherit;
+                opacity: .3;
+                @include atSmall {
+                    display: none;
+                }
+            }
+            &--clickable {
+                pointer-events: all;
+            }
+        }
+    }
+    &__actions {
+        width: 27%;
+        @include atSmall {
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-grow: 1;
+        }
+        &-item {
+            &:not(:last-child) {
+                @include atSmall {
+                    border-right: 2px solid $color-border;
+                    padding-right: 1.333rem;
+                }
+            }
+        }
+    }
+    &__searchbar-trigger {
+        cursor: pointer;
+        height: 1.667rem;
+        width: auto;
+        margin-right: 1.333rem;
+        @include atSmall {
+            display: none;
+        }
+    }
+    &__searchbar {
+        position: absolute;
+        z-index: 2;
+        bottom: -0.5rem;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        width: 100%;
+        display: none;
+        @include atSmall {
+            display: block !important;
+            position: static;
+            transform: none;
+            width: 60%;
+            max-width: 246px;
+        }
+    }
+}

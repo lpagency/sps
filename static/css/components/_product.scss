@@ -1,0 +1,164 @@
+.product {
+    @include atSmall {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &__media {
+        text-align: center;
+        position: relative;
+
+        @include atSmall {
+            width: 50%;
+            margin-right: 1.875rem;
+        }
+        &-content {
+            @include atSmall {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+        }
+        &-list {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            @include atSmall {
+                justify-content: space-between;
+                width: 20%;
+                order: 1;
+                display: block;
+                flex-wrap: nowrap;
+            }
+            &__item {
+                border: 1px solid $color-white;
+                cursor: pointer;
+                width: 18%;
+                margin-top: 5px;
+                @include atSmall {
+                    margin-top: 0;
+                    width: auto;
+                }
+                & + & {
+                    @include atSmall {
+                        margin-top: 5px;
+                    }
+                }
+                &:not(:last-child) {
+                    margin-right: 5px;
+                    @include atSmall {
+                        margin-right: 0;
+                    }
+                }
+                &-img {
+                    width: 100%;
+                    height: auto;
+                    padding: 0 15px;
+                }
+                &--active,
+                &:hover {
+                    border-color: $color-primary-light;
+                }
+            }
+        }
+    }
+    &__img {
+        width: 100%;
+        height: auto;
+        @include atSmall {
+            width: 80%;
+            order: 2;
+        }
+    }
+    &__info {
+        @include atSmall {
+            width: 50%;
+        }
+    }
+    &__intro {
+        border-bottom: 1px solid $color-border;
+    }
+    &__size {
+        border-bottom: 1px solid $color-border;
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &-btns {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            position: fixed;
+            z-index: 3;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            @include atSmall {
+                position: static;
+            }
+            .btn {
+                border-radius: 0;
+                @include atSmall {
+                    border-radius: 6px;
+                }
+                &:hover {
+                    background-color: $color-primary-light;
+                    color: $color-white;
+                    @include atSmall {
+                        background-color: transparent;
+                        color: $color-primary-light;
+                    }
+                }
+                & + .btn {
+                    @include atSmall {
+                        margin-left: 1rem;
+                    }
+                    &:hover {
+                        background-color: $color-secondary;
+                        @include atSmall {
+                            background-color: transparent;
+                            color: $color-secondary;
+                        }
+                    }
+                }
+            }
+        }
+        &-list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include atSmall {
+                justify-content: flex-start;
+            }
+            &__item {
+                height: 4.167rem;
+                width: 4.167rem;
+                border-radius: 50%;
+                border: 2px solid $color-text-dark;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $font-main;
+                font-weight: 500;
+                font-size: 1.167rem;
+                cursor: pointer;
+                @include atSmall {
+                    font-size: 0.875rem;
+                    width: 3.125rem;
+                    height: 3.125rem;
+                }
+                & + & {
+                    margin-left: 10px;
+                }
+                &:hover,
+                &--active {
+                    background-color: $color-text-dark;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}

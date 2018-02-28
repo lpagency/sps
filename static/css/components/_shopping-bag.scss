@@ -1,0 +1,20 @@
+.shopping-bag {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &__copy {
+        display: none;
+        @include atSmall {
+            display: block;
+            margin: 0 1rem;
+        }
+    }
+    &__icon {
+        height: 1.667rem;
+        width: auto;
+        @include atSmall {
+            height: 1.25rem;
+        }
+    }
+}

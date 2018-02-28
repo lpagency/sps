@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container">
+    <ul class="u-padding-top-smaller u-hidden-xs breadcrumbs">
+        <li class="breadcrumbs__item">
+            <a href="#" class="text text--color-light text--extralight text--smaller breadcrumbs__link">Home</a>
+        </li>
+    </ul>
+    <div class="section-products">
+        <aside class="u-hidden-xs section-products__sidebar">
+            <div class="filters">
+                <div class="u-padding-vertical-small filters__group">
+                    <h4 class="u-margin-bottom-small text text--small text--weight-med text--color-dark">TIPO DE CALZADO</h4>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Ballerinas">
+                        <label for="Ballerinas" class="filters__label text text--light text--color-dark">Ballerinas</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Botines">
+                        <label for="Botines" class="filters__label text text--light text--color-dark">Botines</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Mocasines">
+                        <label for="Mocasines" class="filters__label text text--light text--color-dark">Mocasines</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Mules / Slippers">
+                        <label for="Mules / Slippers" class="filters__label text text--light text--color-dark">Mules / Slippers</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Plataformas">
+                        <label for="Plataformas" class="filters__label text text--light text--color-dark">Plataformas</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Playeras">
+                        <label for="Playeras" class="filters__label text text--light text--color-dark">Playeras</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Sandalias">
+                        <label for="Sandalias" class="filters__label text text--light text--color-dark">Sandalias</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Zapatos">
+                        <label for="Zapatos" class="filters__label text text--light text--color-dark">Zapatos</label>
+                    </div>
+                </div>
+                <div class="u-padding-vertical-small filters__group">
+                    <h4 class="u-margin-bottom-small text text--small text--weight-med text--color-dark">COLOR PRINCIPAL</h4>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Azul">
+                        <label for="Azul" class="filters__label text text--light text--color-dark">Azul</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Beige">
+                        <label for="Beige" class="filters__label text text--light text--color-dark">Beige</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Blanco">
+                        <label for="Blanco" class="filters__label text text--light text--color-dark">Blanco</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Burdeo">
+                        <label for="Burdeo" class="filters__label text text--light text--color-dark">Burdeo</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Café">
+                        <label for="Café" class="filters__label text text--light text--color-dark">Café</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Dorado">
+                        <label for="Dorado" class="filters__label text text--light text--color-dark">Dorado</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Gris">
+                        <label for="Gris" class="filters__label text text--light text--color-dark">Gris</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Metálico">
+                        <label for="Metálico" class="filters__label text text--light text--color-dark">Metálico</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Negro">
+                        <label for="Negro" class="filters__label text text--light text--color-dark">Negro</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Rojo">
+                        <label for="Rojo" class="filters__label text text--light text--color-dark">Rojo</label>
+                    </div>
+                </div>
+                <div class="u-padding-vertical-small filters__group">
+                    <h4 class="u-margin-bottom-small text text--small text--weight-med text--color-dark">MATERIAL DEL ZAPATO</h4>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Cuero">
+                        <label for="Cuero" class="filters__label text text--light text--color-dark">Cuero</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Eco Cuero">
+                        <label for="Eco Cuero" class="filters__label text text--light text--color-dark">Eco Cuero</label>
+                    </div>
+                </div>
+                <div class="u-padding-vertical-small filters__group">
+                    <h4 class="u-margin-bottom-small text text--small text--weight-med text--color-dark">MARCA</h4>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Degas">
+                        <label for="Degas" class="filters__label text text--light text--color-dark">Degas</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Eda Manzini">
+                        <label for="Eda Manzini" class="filters__label text text--light text--color-dark">Eda Manzini</label>
+                    </div>
+                    <div class="filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Lola Canales">
+                        <label for="Lola Canales" class="filters__label text text--light text--color-dark">Lola Canales</label>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div class="section-products__main">
+            <div class="section-products__main-header">
+                <div class="section-products__main-filters-trigger">
+                    <p class="open-popup text text--light text--color-light" data-popup="sort">Ordenar por:
+                        <i class="fa fa-caret-down"></i>
+                    </p>
+                    <p class="open-popup text text--light text--color-light" data-popup="filter">Filtrar por:
+                        <i class="fa fa-caret-down"></i>
+                    </p>
+                </div>
+                <div class="section-products__title">
+                    <h1 class="text text--big text--weight-med text--color-dark">MUJERES
+                        <span class="text text--color-light text--light text--big">- 12 Items</span>
+                    </h1>
+                </div>
+                <div class="u-hidden-xs-flex dropdown">
+                    <h4 class="dropdown__label text text--light">Ordenar por:</h4>
+                    <i class="fa fa-caret-down dropdown__arrow"></i>
+                    <ul class="dropdown__list">
+                        <li class="dropdown__list-item" dropdown-val="main_price,desc" >Precio: Mayor a menor</li>
+                        <li class="dropdown__list-item" dropdown-val="main_price,asc" >Precio: Menor a mayor</li>
+                        <li class="dropdown__list-item" dropdown-val="name,asc" >Nombre</li>
+                        <li class="dropdown__list-item" dropdown-val="random,asc" >Aleatorio</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="u-hidden-xs-flex u-padding-vertical-small section-products__main-filters">
+                <input name="inner-filters" type="radio" class="section-products__main-filters__input" id="tallas-disponibles">
+                <label class="section-products__main-filters__label text text--extralight text--color-light text--small" for="tallas-disponibles">Tallas Disponibles</label>
+                <ul class="section-products__main-filters__list">
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="35">
+                        <label for="35" class="filters__label text text--color-dark text--smaller">35</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="36">
+                        <label for="36" class="filters__label text text--color-dark text--smaller">36</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="37">
+                        <label for="37" class="filters__label text text--color-dark text--smaller">37</label>
+                    </li>
+                </ul>
+
+                <input name="inner-filters" type="radio" class="section-products__main-filters__input" id="tipo-taco">
+                <label class="section-products__main-filters__label text text--extralight text--color-light text--small" for="tipo-taco">Tipo de Taco</label>
+                <ul class="section-products__main-filters__list">
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Alto">
+                        <label for="Alto" class="filters__label text text--color-dark text--smaller">Alto</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Bajo">
+                        <label for="Bajo" class="filters__label text text--color-dark text--smaller">Bajo</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Chino">
+                        <label for="Chino" class="filters__label text text--color-dark text--smaller">Chino</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Medio">
+                        <label for="Medio" class="filters__label text text--color-dark text--smaller">Medio</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Plano">
+                        <label for="Plano" class="filters__label text text--color-dark text--smaller">Plano</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Tacón">
+                        <label for="Tacón" class="filters__label text text--color-dark text--smaller">Tacón</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="Terraplén">
+                        <label for="Terraplén" class="filters__label text text--color-dark text--smaller">Terraplén</label>
+                    </li>
+                </ul>
+
+                <input name="inner-filters" type="radio" class="section-products__main-filters__input" id="altura-taco">
+                <label class="section-products__main-filters__label text text--extralight text--color-light text--small" for="altura-taco">Altura Taco</label>
+                <ul class="section-products__main-filters__list">
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="1.5cms">
+                        <label for="1.5cms" class="filters__label text text--color-dark text--smaller">1.5cms</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="2.5cms">
+                        <label for="2.5cms" class="filters__label text text--color-dark text--smaller">2.5cms</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="3.5cms">
+                        <label for="3.5cms" class="filters__label text text--color-dark text--smaller">3.5cms</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="4.5cms">
+                        <label for="4.5cms" class="filters__label text text--color-dark text--smaller">4.5cms</label>
+                    </li>
+                </ul>
+
+                <input name="inner-filters" type="radio" class="section-products__main-filters__input" id="altura-plataforma">
+                <label class="section-products__main-filters__label text text--extralight text--color-light text--small" for="altura-plataforma">Altura Plataforma</label>
+                <ul class="section-products__main-filters__list">
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="plat-1.5cms">
+                        <label for="plat-1.5cms" class="filters__label text text--color-dark text--smaller">1.5cms</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="plat-2.5cms">
+                        <label for="plat-2.5cms" class="filters__label text text--color-dark text--smaller">2.5cms</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="plat-3.5cms">
+                        <label for="plat-3.5cms" class="filters__label text text--color-dark text--smaller">3.5cms</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="plat-4.5cms">
+                        <label for="plat-4.5cms" class="filters__label text text--color-dark text--smaller">4.5cms</label>
+                    </li>
+                    <li class="section-products__main-filters__item">
+                        <input type="checkbox" class="filters__checkbox" id="plat-5.5cms">
+                        <label for="plat-5.5cms" class="filters__label text text--color-dark text--smaller">5.5cms</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="section-products__content">
+                <div class="section-products__content-row">
+                    <!-- product list or detail goes here -->
+                    {% include 'components/product-list-loader.html' %}
+                </div>
+                <button class="btn btn--centered btn--half text text--weight-med text--title text--color-tertiary btn--small btn--tertiary">CARGAR MÁS PRODUCTOS</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% end %}
+
+
+{% block head %}
+<style media="screen">{% include '../static/css/compiled/product_preload.min.css' %}</style>
+{% end %}
+
+<!-- ALWAYS PUT JS INSIDE THIS BLOCK AND MAKE THEM ASYNCH -->
+{% block javascript %}
+{% include 'components/product-list-item.html' %}
+
+<!--  javascript includes for shopping cart -->
+<!-- <script defer="defer" type="text/javascript" src="http://localhost:9000/dist/bodegas.client.js"></script> -->
+<script defer="defer" type="text/javascript" src="{{ site_base }}/common/js/bower/bodegas.client/dist/bodegas.client.min.js"></script>
+<script type="text/javascript" defer="defer">
+    // Shopping cart
+    // =============
+    window.addEventListener('DOMContentLoaded', function() {
+        (function($){
+            var show_products = function(sort_field, dir)
+            {
+                $(".section-products__content-row").ecommerce('destroy');
+                $(".section-products__content-row").ecommerce({
+                    app_public: 84,
+                    base_url: 'https://apibodegas.loadingplay.com/',
+                    products_per_page : 9,
+                    tag: '',
+                    ignore_stock: true,
+                    infinite_scroll: true,
+                    checkout_url: 'https://checkout.loadingplay.com',
+                    operator :'or',
+                    templateOrigin: '#product_template',
+                    column: sort_field,
+                    direction: dir,
+                    onLoad: function()
+                    {
+                        $('.product-list-loader').remove()
+                    }
+                });
+            };
+
+            $('.dropdown').dropdown().on('change', function(e, value)
+            {
+                var sort_field = value.split(",")[0];
+                var dir = value.split(",")[1];
+                show_products(sort_field, dir);
+            });
+
+            show_products('main_price', 'asc');
+        })(jQuery);
+    });
+</script>
+<!-- /javascript includes for shopping-cart -->
+{% end %}

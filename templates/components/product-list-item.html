@@ -1,0 +1,20 @@
+<!--  product list template -->
+<script type="text/template" id="product_template">
+    <article class="product-box section-products__item">
+        <a href="{{ site_base }}/product/{{! name|friendly }}/{{! id }}" class="product-box__content">
+            <div class="product-box__tag text text--color-white text--weight-med">Sale</div>
+            <img src="{{! images[0]['thumb_200'] }}" alt="Imagen del producto" class="product-box__img">
+            <div class="product-box__copy">
+                <h3 class="text text--small text--color-dark text--weight-med">{{! brand }}</h3>
+                <h3 class="text text--smaller text--color-dark text--nobreak">{{! name }}</h3>
+                <div class="product-box__prices">
+                    <p class="text text--smaller text--color-dark text--weight-med">{{! main_price|money }}</p>
+                    <p class="text text--crossline text--smaller">{{! promotion_price|money }}</p>
+                    <p class="text text--color-red text--smaller text--color-dark">(%)</p>
+                </div>
+            </div>
+            <div class="product-box__btn text text--weight-med text--color-tertiary text--small">COMPRAR</div>
+        </a>
+    </article>
+</script>
+<!-- /product list template -->
